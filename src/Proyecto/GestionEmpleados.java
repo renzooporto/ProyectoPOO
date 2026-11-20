@@ -27,128 +27,41 @@ public class GestionEmpleado
         return conta;
     }
     
-    // ---------- Busquedas (devuelven la posicion o -1) ----------
-    
-    public int BuscarPosDni(int dni)
+    public void Ingresar(Empleado ref)
     {
-        int pos = -1;
+        boolean repetido=false;
         for(int i=0;i<conta;i++)
         {
-            if(arreglo[i].getDni()==dni)
+            if(arreglo[i].getDni()==ref.getDni())
             {
-                pos = i;
-                break;
+                repetido=true;
+                System.out.println("El DNI ya esta registrado");
+            }
+            else
+            {
+                if(arreglo[i].getUsuario().equals(ref.getUsuario()))
+                {
+                    repetido=true;
+                    System.out.println("El usuario ya esta registrado");
+                }
+                                                
+                
             }
         }
-        return pos;
-    }
-    
-    public int BuscarPosUsuario(String usuario)
-    {
-        int pos = -1;
-        for(int i=0;i<conta;i++)
+        if(repetido==false)
         {
-            if(arreglo[i].getUsuario().equalsIgnoreCase(usuario))
+            if(conta<arreglo.length)
             {
-                pos = i;
-                break;
+                arreglo[conta]=ref;
+                conta++;
+                System.out.println("Se ingreso correctamente");
             }
-        }
-        return pos;
-    }
-    
-    // ---------- Validaciones y creacion ----------
-    
-    // Devuelve "" si todo esta bien, o el mensaje con la causa del error
-    private String Validar(int dni, String nombres, String apellidos, String usuario, String clave, String rol)
-    {
-        boolean completo = true;
-        if(dni<=0)
-        {
-            completo = false;
-        }
-        if(nombres.equalsIgnoreCase(""))
-        {
-            completo = false;
-        }
-        if(apellidos.equalsIgnoreCase(""))
-        {
-            completo = false;
-        }
-        if(usuario.equalsIgnoreCase(""))
-        {
-            completo = false;
-        }
-        if(clave.equalsIgnoreCase(""))
-        {
-            completo = false;
-        }
-        if(completo==false)
-        {
-            return "Error: todos los campos son obligatorios";
+            else
+            {
+                System.out.println("No hay espacio");
+            }
         }
         
-        boolean rolValido = false;
-        if(rol.equalsIgnoreCase(ROL_ADMIN))
-        {
-            rolValido = true;
-        }
-        else if(rol.equalsIgnoreCase(ROL_RECEP))
-        {
-            rolValido = true;
-        }
-        else if(rol.equalsIgnoreCase(ROL_ENCAR))
-        {
-            rolValido = true;
-        }
-        if(rolValido==false)
-        {
-            return "Error: el rol no es valido";
-        }
-        return "";
-    }
-    
-    // Segun el rol se crea la subclase correspondiente
-    private Empleado Crear(int dni, String nombres, String apellidos, String usuario, String clave, String rol)
-    {
-        if(rol.equalsIgnoreCase(ROL_ADMIN))
-        {
-            return new Administrador(dni, nombres, apellidos, usuario, clave);
-        }
-        else if(rol.equalsIgnoreCase(ROL_RECEP))
-        {
-            return new Recepcionista(dni, nombres, apellidos, usuario, clave);
-        }
-        else
-        {
-            return new EncargadoCancha(dni, nombres, apellidos, usuario, clave);
-        }
-    }
-    
-    // ---------- RF01: registrar, modificar, eliminar ----------
-    
-    public String Ingresar(int dni, String nombres, String apellidos, String usuario, String clave, String rol)
-    {
-        String error = Validar(dni, nombres, apellidos, usuario, clave, rol);
-        if(error.equalsIgnoreCase("")==false)
-        {
-            return error;
-        }
-        if(conta>=arreglo.length)
-        {
-            return "Error: no hay espacio para mas empleados";
-        }
-        if(BuscarPosDni(dni)!=-1)
-        {
-            return "Error: ya existe un empleado con el DNI " + dni;
-        }
-        if(BuscarPosUsuario(usuario)!=-1)
-        {
-            return "Error: el usuario " + usuario + " ya esta en uso";
-        }
-        arreglo[conta] = Crear(dni, nombres, apellidos, usuario, clave, rol);
-        conta++;
-        return "Empleado registrado correctamente";
     }
     
     // El DNI identifica al empleado y no se modifica
