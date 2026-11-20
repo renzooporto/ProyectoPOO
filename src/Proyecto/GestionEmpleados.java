@@ -77,7 +77,7 @@ public class GestionEmpleado
             }
             else
             {
-                if(arreglo[i].getUsuario().equals(usuario))
+                if(arreglo[i].getUsuario().equalsIgnoreCase(usuario))
                 {
                     repetido=true;
                 }
