@@ -64,27 +64,36 @@ public class GestionEmpleado
         
     }
     
-    // El DNI identifica al empleado y no se modifica
-    public String Modificar(int dni, String nombres, String apellidos, String usuario, String clave, String rol)
+    public void Modificar(String dni, Empleado ref)
     {
-        String error = Validar(dni, nombres, apellidos, usuario, clave, rol);
-        if(error.equalsIgnoreCase("")==false)
+        int pos=-1;
+        boolean repetido=false;
+        for(int i=0;i<conta;i++)
         {
-            return error;
+            if(arreglo[i].getDni().equals(dni))
+            {
+                pos=i;
+            }
+            else if(arreglo[i].getUsuario().equals(ref.getUsuario()))
+            {
+                repetido=true;
+            }
         }
-        int pos = BuscarPosDni(dni);
+        
         if(pos==-1)
         {
-            return "Error: no existe un empleado con el DNI " + dni;
+            System.out.println("No se encontro el DNI a modificar");
         }
-        int posUsu = BuscarPosUsuario(usuario);
-        if(posUsu!=-1 && posUsu!=pos)
+        else if(repetido)
         {
-            return "Error: el usuario " + usuario + " ya esta en uso";
+            System.out.println("Error, ese usuario ya esta en uso");
         }
-        // Se vuelve a crear el objeto porque el rol puede cambiar de subclase
-        arreglo[pos] = Crear(dni, nombres, apellidos, usuario, clave, rol);
-        return "Empleado modificado correctamente";
+        else
+        {
+            ref.setDni(dni);
+            arreglo[pos]=ref;
+            System.out.println("Se modifico correctamente");
+        }
     }
     
     public String Eliminar(int dni)
