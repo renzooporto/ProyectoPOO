@@ -83,14 +83,13 @@ public abstract class Cancha
     public boolean EsReservable()
     {
         boolean reservable=true;
-        if(this.estado.equals("En Mantenimiento"))
+        if(this.estado.equalsIgnoreCase("En Mantenimiento"))
         {
             reservable=false;
         }
         return reservable;
     }
     
-    // Cada tipo de cancha calcula su tarifa por hora con su propio recargo
     public abstract double CalcularTarifa();
 
     
