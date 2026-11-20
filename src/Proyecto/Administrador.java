@@ -8,9 +8,9 @@ package Proyecto;
  *
  * @author ROporto
  */
-public class Administrador extends Empleado 
+public class Administrador extends Empleado  
 {
-    public Administrador(String dni, String nombres, String apellidos, String usuario, String clave) 
+    public Administrador(int dni, String nombres, String apellidos, String usuario, String clave) 
     {
         super(dni, nombres, apellidos, usuario, clave, ROL_ADMIN);
     }
