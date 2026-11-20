@@ -8,7 +8,7 @@ package Proyecto;
  *
  * @author ROporto
  */
-public class Cancha 
+public abstract class Cancha 
 {
     protected int capacidad;
     protected float tarifaBase;
@@ -30,11 +30,11 @@ public class Cancha
         this.capacidad = capacidad;
     }
 
-    public double getTarifaBase() {
+    public float getTarifaBase() {
         return tarifaBase;
     }
 
-    public void setTarifaBase(double tarifaBase) {
+    public void setTarifaBase(float tarifaBase) {
         this.tarifaBase = tarifaBase;
     }
 
@@ -80,7 +80,7 @@ public class Cancha
         return nocturno;
     }
     
-    public boolean EstaReservable()
+    public boolean EsReservable()
     {
         boolean reservable=true;
         if(this.estado.equals("En Mantenimiento"))
@@ -91,7 +91,7 @@ public class Cancha
     }
     
     // Cada tipo de cancha calcula su tarifa por hora con su propio recargo
-    public abstract double CalcularTarifa(int hora);
+    public abstract double CalcularTarifa();
 
     
     public String VerInfo() {
