@@ -15,7 +15,7 @@ public class GestionEmpleado
 
     public GestionEmpleado() 
     {
-        arreglo = new Empleado[50];
+        arreglo = new Empleado[20];
         conta = 0;
     }
 
