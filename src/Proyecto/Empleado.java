@@ -10,15 +10,15 @@ package Proyecto;
  */
 public class Empleado 
 {
-    protected int dni, clave;
-    protected String nombres, apellidos, usuario, rol;
+    protected int dni;
+    protected String nombres, apellidos, usuario, contrasena, rol;
 
-    public Empleado(int dni, String nombre, String apellido, String usuario, String contraseña, String rol) {
+    public Empleado(int dni, String nombre, String apellido, String usuario, String contrasena, String rol) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
         this.usuario = usuario;
-        this.contraseña = contraseña;
+        this.contrasena = contrasena;
         this.rol = rol;
     }
 
@@ -54,11 +54,11 @@ public class Empleado
         this.usuario = usuario;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasena() {
+        return contrasena;
     }
 
-    public void setContraseña(String contraseña) {
+    public void setContrasena(String contrasena) {
         this.contraseña = contraseña;
     }
 
@@ -77,6 +77,7 @@ public class Empleado
                 "\nNombres: " + nombres + 
                 "\nApellidos: " + apellidos + 
                 "\nUsuario: " + usuario + 
+                "\nContrasena: " + contrasena +
                 "\nRol: " + rol;
     }
 }
