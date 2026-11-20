@@ -80,23 +80,33 @@ public class GestionEmpleado
         }
     }
     
-    public String Eliminar(int dni)
+    public void Eliminar(int dni)
     {
-        int pos = BuscarPosDni(dni);
-        if(pos==-1)
+        boolean encontro=false;
+        for(int i=0;i<conta;i++)
         {
-            return "Error: no existe un empleado con el DNI " + dni;
+            if(arreglo[i].getDni()==dni)
+            {
+                encontro=true;
+                for(int j=i;j<conta-1;j++)
+                {
+                    arreglo[j]=arreglo[j+1];
+                }
+                arreglo[conta-1]=null;
+                conta--;
+                break;
+            }
         }
-        for(int j=pos;j<conta-1;j++)
+        if(encontro)
         {
-            arreglo[j]=arreglo[j+1];
+            System.out.println("Se elimino correctamente");
         }
-        arreglo[conta-1]=null;
-        conta--;
-        return "Empleado eliminado correctamente";
+        else
+        {
+            System.out.println("No se encontro el DNI del empleado a eliminar");
+        }
     }
     
-    // ---------- Visualizacion ----------
     
     public String VerInfo()
     {
