@@ -64,63 +64,47 @@ public class GestionEmpleado
         
     }
     
-    public void Modificar(int dni, String nombre, String apellido, String usuario, String contrasena, String rol)
-    {
-        for(int i = 0; i < conta; i++)
-        {
-            if(arreglo[i].getDni() == dni)
-            {
-                arreglo[i].setNombre(nombre);
-                arreglo[i].setApellido(apellido);
-                arreglo[i].setUsuario(usuario);
-                arreglo[i].setContrasena(contrasena);
-                arreglo[i].setRol(rol);
-                break;
-            }
-        }
-    }
-
-
-    public void Modificar(int dni, String nombre, String apellido, String usuario, String contrasena, String rol)
-{
-    int pos=-1;
-    boolean repetido=false;
-    for(int i=0;i<conta;i++)
-    {
-        if(arreglo[i].getDni()==dni)
-        {
-            pos=i;
-        }
-        else
-        {
-            if(arreglo[i].getUsuario().equals(usuario))
-            {
-                repetido=true;
-            }
-        }
-    }
     
-    if(pos==-1)
+    public void Modificar(int dni, String nombre, String apellido, String usuario, String contrasena, String rol)
     {
-        System.out.println("No se encontro el DNI a modificar");
-    }
-    else
-    {
-        if(repetido)
+        int pos=-1;
+        boolean repetido=false;
+        for(int i=0;i<conta;i++)
         {
-            System.out.println("Error, ese usuario ya esta en uso");
+            if(arreglo[i].getDni()==dni)
+            {
+                pos=i;
+            }
+            else
+            {
+                if(arreglo[i].getUsuario().equals(usuario))
+                {
+                    repetido=true;
+                }
+            }
+        }
+
+        if(pos==-1)
+        {
+            System.out.println("No se encontro el DNI a modificar");
         }
         else
         {
-            arreglo[pos].setNombre(nombre);
-            arreglo[pos].setApellido(apellido);
-            arreglo[pos].setUsuario(usuario);
-            arreglo[pos].setContrasena(contrasena);
-            arreglo[pos].setRol(rol);
-            System.out.println("Se modifico correctamente");
+            if(repetido)
+            {
+                System.out.println("Error, ese usuario ya esta en uso");
+            }
+            else
+            {
+                arreglo[pos].setNombre(nombre);
+                arreglo[pos].setApellido(apellido);
+                arreglo[pos].setUsuario(usuario);
+                arreglo[pos].setContrasena(contrasena);
+                arreglo[pos].setRol(rol);
+                System.out.println("Se modifico correctamente");
+            }
         }
     }
-}
     
     public void Eliminar(int dni)
     {
