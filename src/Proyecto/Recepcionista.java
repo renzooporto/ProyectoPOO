@@ -8,7 +8,7 @@ package Proyecto;
  *
  * @author ROporto
  */
-public class Recepcionista extends Empleado implements Constantes 
+public class Recepcionista extends Empleado
 {
     public Recepcionista(String dni, String nombres, String apellidos, String usuario, String clave) 
     {
