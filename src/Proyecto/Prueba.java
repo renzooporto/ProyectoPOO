@@ -10,29 +10,7 @@ package Proyecto;
  */
 public class Prueba 
 {
-    public static String ElegirRol(Scanner sc)
-    {
-        System.out.println("Rol: 1) Administrador  2) Recepcionista  3) Encargado de Cancha");
-        int op = sc.nextInt();
-        if(op==1)
-        {
-            return "Administrador";
-        }
-        else if(op==2)
-        {
-            return "Recepcionista";
-        }
-        else if(op==3)
-        {
-            return "Encargado de Cancha";
-        }
-        else
-        {
-            return "";
-        }
-    }
-    
-    public static void main(String[] args) 
+     public static void main(String[] args) 
     {
         Scanner sc = new Scanner(System.in);
         GestionEmpleado GE = new GestionEmpleado();
