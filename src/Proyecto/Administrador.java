@@ -8,6 +8,16 @@ package Proyecto;
  *
  * @author ROporto
  */
-public class Administrador {
-    
+public class Administrador extends Empleado implements Constantes 
+{
+    public Administrador(String dni, String nombres, String apellidos, String usuario, String clave) 
+    {
+        super(dni, nombres, apellidos, usuario, clave, ROL_ADMIN);
+    }
+
+    @Override
+    public String Permisos() 
+    {
+        return "Empleados, canchas, tarifas, servicios, paquetes y reportes";
+    }
 }
