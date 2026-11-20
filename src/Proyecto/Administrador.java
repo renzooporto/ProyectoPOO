@@ -8,7 +8,7 @@ package Proyecto;
  *
  * @author ROporto
  */
-public class Administrador extends Empleado implements Constantes 
+public class Administrador extends Empleado 
 {
     public Administrador(String dni, String nombres, String apellidos, String usuario, String clave) 
     {
