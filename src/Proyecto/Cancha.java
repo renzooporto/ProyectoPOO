@@ -90,7 +90,7 @@ public abstract class Cancha
             return reservable;
         }
 
-        public abstract double CalcularTarifa();
+        public abstract float CalcularTarifa();
 
 
         public String VerInfo() {
