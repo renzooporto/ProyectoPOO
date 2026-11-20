@@ -72,5 +72,6 @@ public class Prueba
                 System.out.println(GE.VerInfo());
             }
         }
+         System.out.println("Usted salio correctamente");
     }
 }
