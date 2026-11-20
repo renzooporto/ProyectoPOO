@@ -64,16 +64,16 @@ public class GestionEmpleado
         
     }
     
-    public void Modificar(int dni, String nombres, String apellidos, String usuario, String clave, String rol)
+    public void Modificar(int dni, String nombre, String apellido, String usuario, String contrasena, String rol)
     {
         for(int i = 0; i < conta; i++)
         {
             if(arreglo[i].getDni() == dni)
             {
-                arreglo[i].setNombres(nombres);
-                arreglo[i].setApellidos(apellidos);
+                arreglo[i].setNombre(nombre);
+                arreglo[i].setApellido(apellido);
                 arreglo[i].setUsuario(usuario);
-                arreglo[i].setClave(clave);
+                arreglo[i].setContrasena(contrasena);
                 arreglo[i].setRol(rol);
                 break;
             }
@@ -81,7 +81,7 @@ public class GestionEmpleado
     }
 
 
-    public void Modificar(int dni, String nombres, String apellidos, String usuario, String clave, String rol)
+    public void Modificar(int dni, String nombre, String apellido, String usuario, String contrasena, String rol)
 {
     int pos=-1;
     boolean repetido=false;
@@ -112,10 +112,10 @@ public class GestionEmpleado
         }
         else
         {
-            arreglo[pos].setNombres(nombres);
-            arreglo[pos].setApellidos(apellidos);
+            arreglo[pos].setNombre(nombre);
+            arreglo[pos].setApellido(apellido);
             arreglo[pos].setUsuario(usuario);
-            arreglo[pos].setClave(clave);
+            arreglo[pos].setContrasena(contrasena);
             arreglo[pos].setRol(rol);
             System.out.println("Se modifico correctamente");
         }
