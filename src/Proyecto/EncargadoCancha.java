@@ -8,6 +8,16 @@ package Proyecto;
  *
  * @author ROporto
  */
-public class EncargadoCancha {
-    
+public class EncargadoCancha extends Empleado 
+{
+    public EncargadoCancha(String dni, String nombres, String apellidos, String usuario, String clave) 
+    {
+        super(dni, nombres, apellidos, usuario, clave, ROL_ENCAR);
+    }
+
+    @Override
+    public String Permisos() 
+    {
+        return "Inicio, cierre e incidencias de partidos";
+    }
 }
