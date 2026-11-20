@@ -8,7 +8,7 @@ package Proyecto;
  *
  * @author ROporto
  */
-public abstract class Empleado 
+public class Empleado 
 {
     protected int dni, clave;
     protected String nombres, apellidos, usuario, rol;
