@@ -13,13 +13,12 @@ public abstract class Empleado
     protected int dni, clave;
     protected String nombres, apellidos, usuario, rol;
 
-    public Empleado(int dni, String nombres, String apellidos, String usuario, int clave, String rol) 
-    {
+    public Empleado(int dni, String nombre, String apellido, String usuario, String contraseña, String rol) {
         this.dni = dni;
-        this.nombres = nombres;
-        this.apellidos = apellidos;
+        this.nombre = nombre;
+        this.apellido = apellido;
         this.usuario = usuario;
-        this.clave = clave;
+        this.contraseña = contraseña;
         this.rol = rol;
     }
 
@@ -31,20 +30,20 @@ public abstract class Empleado
         this.dni = dni;
     }
 
-    public String getNombres() {
-        return nombres;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombres(String nombres) {
-        this.nombres = nombres;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getApellidos() {
-        return apellidos;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     public String getUsuario() {
@@ -55,12 +54,12 @@ public abstract class Empleado
         this.usuario = usuario;
     }
 
-    public int getClave() {
-        return clave;
+    public String getContraseña() {
+        return contraseña;
     }
 
-    public void setClave(int clave) {
-        this.clave = clave;
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
     }
 
     public String getRol() {
@@ -71,8 +70,6 @@ public abstract class Empleado
         this.rol = rol;
     }
     
-    // Cada rol define sus funciones permitidas (se usara en RF10)
-    public abstract String Permisos();
     
     public String VerInfo() 
     {
@@ -80,7 +77,6 @@ public abstract class Empleado
                 "\nNombres: " + nombres + 
                 "\nApellidos: " + apellidos + 
                 "\nUsuario: " + usuario + 
-                "\nRol: " + rol + 
-                "\nPermisos: " + Permisos();
+                "\nRol: " + rol;
     }
 }
