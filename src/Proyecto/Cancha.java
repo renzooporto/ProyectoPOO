@@ -14,12 +14,11 @@ public class Cancha
     protected float tarifaBase;
     protected String codigo, nombre, tipo, estado;
 
-    public Cancha(String codigo, String nombre, String tipo, int capacidad, double tarifaBase, String estado) {
+    public Cancha(String codigo, String nombre, String tipo, int capacidad, String estado) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.tipo = tipo;
         this.capacidad = capacidad;
-        this.tarifaBase = tarifaBase;
         this.estado = estado;
     }
 
@@ -70,4 +69,36 @@ public class Cancha
     public void setEstado(String estado) {
         this.estado = estado;
     }   
+
+    public boolean EsNocturno(int hora)
+    {
+        boolean nocturno=false;
+        if(hora>=18)
+        {
+            nocturno=true;
+        }
+        return nocturno;
+    }
+    
+    public boolean EstaReservable()
+    {
+        boolean reservable=true;
+        if(this.estado.equals("En Mantenimiento"))
+        {
+            reservable=false;
+        }
+        return reservable;
+    }
+    
+    // Cada tipo de cancha calcula su tarifa por hora con su propio recargo
+    public abstract double CalcularTarifa(int hora);
+
+    
+    public String VerInfo() {
+        return  "codigo: " + codigo + 
+                "\nnombre: " + nombre + 
+                "\ntipo: " + tipo + 
+                "\ncapacidad: " + capacidad + 
+                "\ntarifa base: " + tarifaBase + 
+                "\nestado: " + estado;
 }
