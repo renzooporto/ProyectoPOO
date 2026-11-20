@@ -10,9 +10,10 @@ package Proyecto;
  */
 public abstract class Empleado 
 {
-    protected String dni, nombres, apellidos, usuario, clave, rol;
+    protected int dni, clave;
+    protected String nombres, apellidos, usuario, rol;
 
-    public Empleado(String dni, String nombres, String apellidos, String usuario, String clave, String rol) 
+    public Empleado(int dni, String nombres, String apellidos, String usuario, int clave, String rol) 
     {
         this.dni = dni;
         this.nombres = nombres;
@@ -22,11 +23,11 @@ public abstract class Empleado
         this.rol = rol;
     }
 
-    public String getDni() {
+    public int getDni() {
         return dni;
     }
 
-    public void setDni(String dni) {
+    public void setDni(int dni) {
         this.dni = dni;
     }
 
@@ -54,11 +55,11 @@ public abstract class Empleado
         this.usuario = usuario;
     }
 
-    public String getClave() {
+    public int getClave() {
         return clave;
     }
 
-    public void setClave(String clave) {
+    public void setClave(int clave) {
         this.clave = clave;
     }
 
