@@ -8,6 +8,16 @@ package Proyecto;
  *
  * @author ROporto
  */
-public class Recepcionista {
-    
+public class Recepcionista extends Empleado implements Constantes 
+{
+    public Recepcionista(String dni, String nombres, String apellidos, String usuario, String clave) 
+    {
+        super(dni, nombres, apellidos, usuario, clave, ROL_RECEP);
+    }
+
+    @Override
+    public String Permisos() 
+    {
+        return "Jugadores y reservas";
+    }
 }
