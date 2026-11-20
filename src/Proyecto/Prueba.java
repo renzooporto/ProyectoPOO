@@ -22,7 +22,7 @@ public class Prueba
         while(opcion!=5)
         {
             System.out.println("\n===== GESTION DE PERSONAL =====");
-            System.out.println("1. Registrar empleado");
+            System.out.println("1. Ingresar empleado");
             System.out.println("2. Modificar empleado");
             System.out.println("3. Eliminar empleado");
             System.out.println("4. Ver empleados");
@@ -41,7 +41,7 @@ public class Prueba
                String usuario = sc.next();
                System.out.println("Contrasena: ");
                String contrasena = sc.next();
-               System.out.println("Rol: ")                    
+               System.out.println("Rol: ");                   
                String rol = sc.next();
                System.out.println(GE.Ingresar(dni, nombre, apellido, usuario, contrasena, rol));
             }
@@ -59,7 +59,7 @@ public class Prueba
                String contrasena = sc.next();
                System.out.println("Nueva rol: ");
                String rol = sc.next();
-               System.out.println(GE.Modificar(dni, nombres, apellidos, usuario, clave, rol));
+               System.out.println(GE.Modificar(dni, nombre, apellido, usuario, contrasena, rol));
             }
             else if(opcion==3)
             {
