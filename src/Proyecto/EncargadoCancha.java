@@ -8,9 +8,9 @@ package Proyecto;
  *
  * @author ROporto
  */
-public class EncargadoCancha extends Empleado 
+public class EncargadoCancha extends Empleado  
 {
-    public EncargadoCancha(String dni, String nombres, String apellidos, String usuario, String clave) 
+    public EncargadoCancha(int dni, String nombres, String apellidos, String usuario, String clave) 
     {
         super(dni, nombres, apellidos, usuario, clave, ROL_ENCAR);
     }
