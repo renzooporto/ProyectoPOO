@@ -79,6 +79,48 @@ public class GestionEmpleado
             }
         }
     }
+
+
+    public void Modificar(int dni, String nombres, String apellidos, String usuario, String clave, String rol)
+{
+    int pos=-1;
+    boolean repetido=false;
+    for(int i=0;i<conta;i++)
+    {
+        if(arreglo[i].getDni()==dni)
+        {
+            pos=i;
+        }
+        else
+        {
+            if(arreglo[i].getUsuario().equals(usuario))
+            {
+                repetido=true;
+            }
+        }
+    }
+    
+    if(pos==-1)
+    {
+        System.out.println("No se encontro el DNI a modificar");
+    }
+    else
+    {
+        if(repetido)
+        {
+            System.out.println("Error, ese usuario ya esta en uso");
+        }
+        else
+        {
+            arreglo[pos].setNombres(nombres);
+            arreglo[pos].setApellidos(apellidos);
+            arreglo[pos].setUsuario(usuario);
+            arreglo[pos].setClave(clave);
+            arreglo[pos].setRol(rol);
+            System.out.println("Se modifico correctamente");
+        }
+    }
+}
     
     public void Eliminar(int dni)
     {
