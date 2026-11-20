@@ -64,35 +64,19 @@ public class GestionEmpleado
         
     }
     
-    public void Modificar(String dni, Empleado ref)
+    public void Modificar(int dni, String nombres, String apellidos, String usuario, String clave, String rol)
     {
-        int pos=-1;
-        boolean repetido=false;
-        for(int i=0;i<conta;i++)
+        for(int i = 0; i < conta; i++)
         {
-            if(arreglo[i].getDni().equals(dni))
+            if(arreglo[i].getDni() == dni)
             {
-                pos=i;
+                arreglo[i].setNombres(nombres);
+                arreglo[i].setApellidos(apellidos);
+                arreglo[i].setUsuario(usuario);
+                arreglo[i].setClave(clave);
+                arreglo[i].setRol(rol);
+                break;
             }
-            else if(arreglo[i].getUsuario().equals(ref.getUsuario()))
-            {
-                repetido=true;
-            }
-        }
-        
-        if(pos==-1)
-        {
-            System.out.println("No se encontro el DNI a modificar");
-        }
-        else if(repetido)
-        {
-            System.out.println("Error, ese usuario ya esta en uso");
-        }
-        else
-        {
-            ref.setDni(dni);
-            arreglo[pos]=ref;
-            System.out.println("Se modifico correctamente");
         }
     }
     
