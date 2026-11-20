@@ -31,47 +31,47 @@ public class Prueba
             
             if(opcion==1)
             {
-               System.out.println("DNI: ");
-               int dni = sc.nextInt();
-               System.out.println("Nombre: ");
-               String nombres = sc.next();
-               System.out.println("Apellido: ");
-               String apellidos = sc.next();
-               System.out.println("Usuario: ");
-               String usuario = sc.next();
-               System.out.println("Contrasena: ");
-               String contrasena = sc.next();
-               System.out.println("Rol: ");                   
-               String rol = sc.next();
-               System.out.println(GE.Ingresar(dni, nombre, apellido, usuario, contrasena, rol));
+                System.out.println("DNI: ");
+                int dni = sc.nextInt();
+                System.out.println("Nombre: ");
+                String nombre = sc.next();
+                System.out.println("Apellido: ");
+                String apellido = sc.next();
+                System.out.println("Usuario: ");
+                String usuario = sc.next();
+                System.out.println("Contrasena: ");
+                String contrasena = sc.next();
+                System.out.println("Rol: ");
+                String rol = sc.next();
+                GE.Ingresar(dni, nombre, apellido, usuario, contrasena, rol);
             }
             else if(opcion==2)
             {
-               System.out.println("DNI del empleado a modificar: ");
-               int dni = sc.nextInt();
-               System.out.println("Nuevo nombre: ");
-               String nombre = sc.next();
-               System.out.println("Nuevo apellido: ");
-               String apellido = sc.next();
-               System.out.println("Nuevo usuario: ");
-               String usuario = sc.next();
-               System.out.println("Nueva contrasena: ");
-               String contrasena = sc.next();
-               System.out.println("Nueva rol: ");
-               String rol = sc.next();
-               System.out.println(GE.Modificar(dni, nombre, apellido, usuario, contrasena, rol));
+                System.out.println("DNI del empleado a modificar: ");
+                int dni = sc.nextInt();
+                System.out.println("Nuevo nombre: ");
+                String nombre = sc.next();
+                System.out.println("Nuevo apellido: ");
+                String apellido = sc.next();
+                System.out.println("Nuevo usuario: ");
+                String usuario = sc.next();
+                System.out.println("Nueva contrasena: ");
+                String contrasena = sc.next();
+                System.out.println("Nuevo rol: ");
+                String rol = sc.next();
+                GE.Modificar(dni, nombre, apellido, usuario, contrasena, rol);
             }
             else if(opcion==3)
             {
                 System.out.println("DNI del empleado a eliminar: ");
                 int dni = sc.nextInt();
-                System.out.println(GE.Eliminar(dni));
+                GE.Eliminar(dni);
             }
             else if(opcion==4)
             {
                 System.out.println(GE.VerInfo());
             }
         }
-         System.out.println("Usted salio correctamente");
+        System.out.println("Usted salio correctamente");
     }
 }
