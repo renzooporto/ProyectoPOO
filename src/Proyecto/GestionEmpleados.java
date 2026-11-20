@@ -29,12 +29,12 @@ public class GestionEmpleado
     
     // ---------- Busquedas (devuelven la posicion o -1) ----------
     
-    public int BuscarPosDni(String dni)
+    public int BuscarPosDni(int dni)
     {
         int pos = -1;
         for(int i=0;i<conta;i++)
         {
-            if(arreglo[i].getDni().equalsIgnoreCase(dni))
+            if(arreglo[i].getDni()==dni)
             {
                 pos = i;
                 break;
@@ -60,10 +60,10 @@ public class GestionEmpleado
     // ---------- Validaciones y creacion ----------
     
     // Devuelve "" si todo esta bien, o el mensaje con la causa del error
-    private String Validar(String dni, String nombres, String apellidos, String usuario, String clave, String rol)
+    private String Validar(int dni, String nombres, String apellidos, String usuario, String clave, String rol)
     {
         boolean completo = true;
-        if(dni.equalsIgnoreCase(""))
+        if(dni<=0)
         {
             completo = false;
         }
@@ -109,7 +109,7 @@ public class GestionEmpleado
     }
     
     // Segun el rol se crea la subclase correspondiente
-    private Empleado Crear(String dni, String nombres, String apellidos, String usuario, String clave, String rol)
+    private Empleado Crear(int dni, String nombres, String apellidos, String usuario, String clave, String rol)
     {
         if(rol.equalsIgnoreCase(ROL_ADMIN))
         {
@@ -127,7 +127,7 @@ public class GestionEmpleado
     
     // ---------- RF01: registrar, modificar, eliminar ----------
     
-    public String Ingresar(String dni, String nombres, String apellidos, String usuario, String clave, String rol)
+    public String Ingresar(int dni, String nombres, String apellidos, String usuario, String clave, String rol)
     {
         String error = Validar(dni, nombres, apellidos, usuario, clave, rol);
         if(error.equalsIgnoreCase("")==false)
@@ -152,7 +152,7 @@ public class GestionEmpleado
     }
     
     // El DNI identifica al empleado y no se modifica
-    public String Modificar(String dni, String nombres, String apellidos, String usuario, String clave, String rol)
+    public String Modificar(int dni, String nombres, String apellidos, String usuario, String clave, String rol)
     {
         String error = Validar(dni, nombres, apellidos, usuario, clave, rol);
         if(error.equalsIgnoreCase("")==false)
@@ -174,7 +174,7 @@ public class GestionEmpleado
         return "Empleado modificado correctamente";
     }
     
-    public String Eliminar(String dni)
+    public String Eliminar(int dni)
     {
         int pos = BuscarPosDni(dni);
         if(pos==-1)
