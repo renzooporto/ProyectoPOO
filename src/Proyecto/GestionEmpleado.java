@@ -143,21 +143,5 @@ public class GestionEmpleado
         }
         return cad;
     }
-    
-    // Tabla de empleados (equivale a la tabla de la ventana de gestion)
-    public String VerTabla()
-    {
-        String cad = "DNI | NOMBRES | APELLIDOS | USUARIO | ROL\n";
-        cad = cad + "----------------------------------------------\n";
-        for(int i=0;i<conta;i++)
-        {
-            cad = cad + arreglo[i].getDni() + " | " 
-                      + arreglo[i].getNombres() + " | " 
-                      + arreglo[i].getApellidos() + " | " 
-                      + arreglo[i].getUsuario() + " | " 
-                      + arreglo[i].getRol() + "\n";
-        }
-        cad = cad + "Total de empleados: " + conta + "\n";
-        return cad;
-    }   
+
 }
