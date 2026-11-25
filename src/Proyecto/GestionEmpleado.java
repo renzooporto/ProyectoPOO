@@ -4,6 +4,7 @@
  */
 package Proyecto;
 
+import javax.swing.JOptionPane;
 /**
  *
  * @author ROporto
