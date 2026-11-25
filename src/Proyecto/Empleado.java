@@ -59,7 +59,7 @@ public class Empleado
     }
 
     public void setContrasena(String contrasena) {
-        this.contraseña = contraseña;
+        this.contrasena = contrasena;
     }
 
     public String getRol() {
