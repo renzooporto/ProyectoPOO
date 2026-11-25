@@ -11,7 +11,7 @@ package Proyecto;
 public class Empleado 
 {
     protected int dni;
-    protected String nombres, apellidos, usuario, contrasena, rol;
+    protected String nombre, apellido, usuario, contrasena, rol;
 
     public Empleado(int dni, String nombre, String apellido, String usuario, String contrasena, String rol) {
         this.dni = dni;
@@ -74,8 +74,8 @@ public class Empleado
     public String VerInfo() 
     {
         return "DNI: " + dni + 
-                "\nNombres: " + nombres + 
-                "\nApellidos: " + apellidos + 
+                "\nNombres: " + nombre + 
+                "\nApellidos: " + apellido + 
                 "\nUsuario: " + usuario + 
                 "\nContrasena: " + contrasena +
                 "\nRol: " + rol;
