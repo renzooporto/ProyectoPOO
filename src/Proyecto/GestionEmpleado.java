@@ -15,7 +15,7 @@ public class GestionEmpleado
 
     public GestionEmpleado() 
     {
-        arreglo = new Empleado[2];
+        arreglo = new Empleado[20];
         conta = 0;
     }
 
@@ -35,14 +35,14 @@ public class GestionEmpleado
             if(arreglo[i].getDni()==ref.getDni())
             {
                 repetido=true;
-                System.out.println("El DNI ya esta registrado");
+                JOptionPane.showMessageDialog(null, "El DNI ya esta registrado");
             }
             else
             {
-                if(arreglo[i].getUsuario().equals(ref.getUsuario()))
+                if(arreglo[i].getUsuario().equalsIgnoreCase(ref.getUsuario()))
                 {
                     repetido=true;
-                    System.out.println("El usuario ya esta registrado");
+                    JOptionPane.showMessageDialog(null, "El usuario ya esta registrado");
                 }
                                                 
                 
