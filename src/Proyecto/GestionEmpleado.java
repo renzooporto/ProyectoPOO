@@ -54,11 +54,11 @@ public class GestionEmpleado
             {
                 arreglo[conta]=ref;
                 conta++;
-                System.out.println("Se ingreso correctamente");
+                JOptionPane.showMessageDialog(null, "Se ingreso correctamente");
             }
             else
             {
-                System.out.println("No hay espacio");
+                JOptionPane.showMessageDialog(null, "No hay espacio");
             }
         }
         
@@ -86,13 +86,13 @@ public class GestionEmpleado
 
         if(pos==-1)
         {
-            System.out.println("No se encontro el DNI a modificar");
+            JOptionPane.showMessageDialog(null, "No se encontro el DNI a modificar");
         }
         else
         {
             if(repetido)
             {
-                System.out.println("Error, ese usuario ya esta en uso");
+                JOptionPane.showMessageDialog(null, "Error, ese usuario ya esta en uso");
             }
             else
             {
@@ -101,7 +101,7 @@ public class GestionEmpleado
                 arreglo[pos].setUsuario(usuario);
                 arreglo[pos].setContrasena(contrasena);
                 arreglo[pos].setRol(rol);
-                System.out.println("Se modifico correctamente");
+                JOptionPane.showMessageDialog(null, "Se modifico correctamente");
             }
         }
     }
@@ -125,11 +125,11 @@ public class GestionEmpleado
         }
         if(encontro)
         {
-            System.out.println("Se elimino correctamente");
+            JOptionPane.showMessageDialog(null, "Se elimino correctamente");
         }
         else
         {
-            System.out.println("No se encontro el DNI del empleado a eliminar");
+            JOptionPane.showMessageDialog(null, "No se encontro el DNI del empleado a eliminar");
         }
     }
     
